@@ -1,5 +1,3 @@
-## My First Experience with Kafka and Apache Spark Streaming
-
 ### Introduction
 Apache Kafka messaging system with Apache Spark are two platforms that came with the Big Data Wave and they have been very useful in managing Big Data expecially when it comes to Streaming Data or *fast data*. 
 I recently had to make use of this two framework for a project and I am going to explain briefly how I set up both projects locally and deploying to production.

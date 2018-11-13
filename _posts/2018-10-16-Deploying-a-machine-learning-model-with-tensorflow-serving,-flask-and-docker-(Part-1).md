@@ -1,8 +1,3 @@
-## Deploying a machine Learning model with Tensorflow Serving, Flask and Docker (Part 1)
-
-AIM: To Show a work through of my deployment of a machine learning model with tensorflow serving and flask-restplus.
-Using Deeplabv3 pretrained model.
-
 Having worked with Machine Learning model for quite sometimes, the basic challenge has been deployment of the model in production. With this in mind google created Tensorflow Serving which is supposed to be an ideal environment for running models in production.
 
 Tensorflow serving main points include the ability to build a serverable which is the fundamental abstraction of Tensorflow serving. Servables are built using `SavedModelBundle` in Tensorflow. Servables are basically there to add flexible to serving model in production, you can basically serve multiple models to multiple products at the same time with an instance of Tensorflow Serving, you can also use this to do some form of A/B Testing.
