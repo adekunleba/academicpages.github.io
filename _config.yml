@@ -7,9 +7,9 @@
 
 # Site Settings
 
-theme                  : "minimal-mistakes-jekyll"
-remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "air"
+# theme                  : "minimal-mistakes-jekyll"
+# remote_theme           : "mmistakes/minimal-mistakes"
+# minimal_mistakes_skin    : "air"
 
 
 locale                   : "en-US"
