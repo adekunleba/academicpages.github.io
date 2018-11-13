@@ -171,7 +171,7 @@ kramdown:
 
 # Collections
 collections:
-  biotechnology:
+  teaching:
     output: true
     permalink: /:collection/:path/
   publications:
@@ -205,10 +205,10 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _biotechnology
+  # _teaching
   - scope:
       path: ""
-      type: biotechnology
+      type: teaching
     values:
       layout: single
       author_profile: true
