@@ -13,7 +13,7 @@
 
 
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "Adekunle Babatunde"
 title_separator          : "-"
 name                     : &name "Your Name"
 description              : &description "personal description"
@@ -106,7 +106,7 @@ author:
   instagram        :
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  #orcid            : "http://orcid.org/yourorcidurl"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
