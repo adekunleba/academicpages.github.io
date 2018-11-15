@@ -9,8 +9,8 @@ main:
   - title: "Biotechnology"
     url: /biotechnology/    
     
-  - title: "Portfolio"
-    url: /portfolio/
+  - title: "Data Science/Machine Learning"
+    url: /datascience/
         
   - title: "Blog Posts"
     url: /year-archive/
