@@ -6,17 +6,22 @@ This is a summary of Chapters 1 and 2.
 
 If a self-driving car makes it 90% of the way to the finish line but is washed into a ditch by a rainstorm, it would hardly be appropriate to say that the autonomous car doesn’t work.
 
-**Priorities:** knowledge first, technology second, opinions third-I use it to help settle disputes in the never-ending battle between the various concerns of every data science project—
-for example, software versus statistics, changing business need versus project timeline, data quality versus accuracy of results
+**Priorities:** 
+* Knowledge first
+* Technology second
+* Opinions third
+
+Use this to help settle disputes in the never-ending battle between the various concerns of every data science project—
+for example, software versus statistics, changing business need versus project timeline, data quality versus accuracy of results.
+
 Often people are blinded by what they think is possible, and they forget to consider that it might not be possible or that it might be much more expensive than estimated. GUILTY!!!
 
 Some key things to try and incorporate as a DS.
-a. Documentation- for future self and others that may work on your project
-b. Code repository and versioning.
-c. Code organization - Useful especially for Cove re-use
-d. Ask questions- from business,Software guys , PMs.
-Lastly,
-e. Stay close to the data- Sometimes simple algorithm is all you need.
+1. Documentation- for future self and others that may work on your project
+2. Code repository and versioning.
+3. Code organization - Useful especially for Cove re-use
+4. Ask questions- from business,Software guys , PMs.
+5. Stay close to the data- Sometimes simple algorithm is all you need.
 
 #### On Project Goals and Client expectations:
 A notable difference between many fields and data science is that in data science, if a customer has a wish, even an experienced data scientist may not know whether it’s possible.
