@@ -218,8 +218,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-      comments: true
+      # share: true
+      # comments: true
   # _scalalang
   - scope:
       path: ""
@@ -227,8 +227,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-      comments: true
+      # share: true
+      # comments: true
   # _datascience
   - scope:
       path: ""
@@ -236,8 +236,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-      comment: true
+      # share: true
+      # comment: true
   # _talks
   - scope:
       path: ""
