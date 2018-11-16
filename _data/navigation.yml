@@ -1,13 +1,13 @@
 # main links links
 main:
   - title: "All Blog Posts"
-    url: /year-archive/   
-
-  - title: "Biotechnology"
-    url: /biotechnology/    
+    url: /year-archive/     
     
   - title: "Data Science/Machine Learning"
     url: /datascience/
+
+  - title: "Biotechnology"
+    url: /biotechnology/  
 
   - title: "Publications"
     url: /publications/
