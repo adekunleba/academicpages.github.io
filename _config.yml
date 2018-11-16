@@ -180,7 +180,7 @@ collections:
   biotechnology:
     output: true
     permalink: /:collection/:path/
-  publications:
+  scalalang:
     output: true
     permalink: /:collection/:path/
   datascience:
@@ -220,10 +220,10 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _publications
+  # _scalalang
   - scope:
       path: ""
-      type: publications
+      type: scalalang
     values:
       layout: single
       author_profile: true

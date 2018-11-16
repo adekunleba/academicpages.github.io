@@ -9,11 +9,11 @@ main:
   - title: "Biotechnology"
     url: /biotechnology/  
 
-  - title: "Publications"
-    url: /publications/
+  - title: "Scala Programming"
+    url: /scalalang/
 
-  - title: "Talks"
-    url: /talks/ 
+  # - title: "Book Review"
+  #   url: /bookreview/ 
     
   # - title: "CV"
   #   url: /cv/

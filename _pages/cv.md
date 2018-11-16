@@ -36,9 +36,9 @@ Skills
   * Sub-skill 2.3
 * Skill 3
 
-Publications
+scalalang
 ======
-  <ul>{% for post in site.publications %}
+  <ul>{% for post in site.scalalang %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
