@@ -6,8 +6,8 @@ main:
   - title: "Data Science/Machine Learning"
     url: /datascience/
 
-  - title: "Biotechnology"
-    url: /biotechnology/  
+  # - title: "Biotechnology"
+  #   url: /biotechnology/  
 
   - title: "Scala Programming"
     url: /scalalang/
