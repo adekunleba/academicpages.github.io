@@ -240,7 +240,7 @@ object UsersDao extends BaseDao {
 ```
 
 Wit this done, we are almost done, we can basically now be making our requests and interacting with db based on whatever it is we want to do.
-So our toy example will require me to write my service that once you send to your web address, you get to use actors to perform non-blocking operations on the request. So we now have Actor for this. The remaining code is based more on implementing a service with akka-http, you can get a glimpse into the very fundamental of akka-http in one of my article here. I basically extended the approach in the article to leverage the use of Actor, so that we move towards a concurrent approach to developing web services.
+So our toy example will require me to write my service that once you send to your web address, you get to use actors to perform non-blocking operations on the request. So we now have Actor for this. The remaining code is based more on implementing a service with akka-http, you can get a glimpse into the very fundamental of akka-http in one of my article [here](https://medium.com/@Babatee760/simple-web-api-with-akka-http-and-redis-database-f9b3826f711a). I basically extended the approach in the article to leverage the use of Actor, so that we move towards a concurrent approach to developing web services.
 
 Let's create our own `UserRegistryActor.scala`
 
