@@ -5,7 +5,7 @@ permalink: /scalalang/scalaandslick
 ---
 
 <figure>
-	<a href="images/scala_slick.png"><img src="images/scala_slick.png"></a>
+	<a href="/images/scala_slick.png"><img src="images/scala_slick.png"></a>
 </figure>
 
 In this article, I am going to explain working with Scala and slick, this is a tutorial to help beginners get a hang of slick as well as introduce to the concept of Scala Programming.
