@@ -4,8 +4,8 @@ collection: scalalang
 permalink: /scalalang/scalaandslick
 ---
 
-<figure>
-	<a href="https://github.com/adekunleba/adekunleba.github.io/blob/master/images/scala_slick.png"><img src="https://github.com/adekunleba/adekunleba.github.io/blob/master/images/scala_slick.png"></a>
+<figure class="third">
+	<img src="/images/scala_slick.png">
 </figure>
 
 In this article, I am going to explain working with Scala and slick, this is a tutorial to help beginners get a hang of slick as well as introduce to the concept of Scala Programming.
