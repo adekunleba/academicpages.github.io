@@ -10,21 +10,21 @@ permalink: /scalalang/scalaandslick
 
 In this article, I am going to explain working with Scala and slick, this is a tutorial to help beginners get a hang of slick as well as introduce to the concept of Scala Programming.
 
-Why I love scala is it's because of it's expressiveness, it allows developers to program with utmost ease.
+Why I love scala is because of its expressiveness, it allows developers to program with utmost ease.
 
-Slick and it's properties that makes it awesome
-Slick allows you to do database query as though you are working with Scala collections i.e it gives you a bonus point of being able to run map, filter, flatmap etc. on your stored data.
+Slick and it's properties that make it awesome
+Slick allows you to do database query as though you are working with Scala collections i.e it gives you a bonus point of being able to run `map`, `filter`, `flatmap` etc. on your stored data.
 
 Apart from this, you get compilation Type Checks, hence you don't have to go into running your application with some hidden bugs.
 
-Also you get a non-blocking request as part of the bonus for using slick, as slick uses a DBIO Monadic API, you are able to chain operations that you can later flatmap out. Keyword emphasis is that ability to flatmap.
+Also, you get a non-blocking request as part of the bonus for using slick, as slick uses a DBIO Monadic API, you are able to chain operations that you can later flatten out
 
-Let's put this into an example fast,say you have a list and you can a map to generate a list of list as shown below.
+Let's put this into an example fast, say you have a list and you can apply map to generate a list of list as shown below.
 
 <script src="https://gist.github.com/adekunleba/3c111a205c5dfd0477bc9ea15a242d75.js">
 </script>
 
-The above `List[Int]` produces a `List[List[Int]]` as per our example, flatmap flattens out the inner List. So, let's say you do a DB query that can return with map `List[List[SomeType]]`, because of the monadic api in slick you get a `flatmap` over many of your queries.
+The above `List[Int]` produces a `List[List[Int]]` as per our example, `flatmap` flattens out the inner List, hence you don't have to do `map` then `flatten`. So, let's say you do a DB query that can return with map `List[List[SomeType]]`, because of the monadic API in slick you get a `flatmap` over many of your queries.
 
 Now that we have established what benefits we can get with Slick let's do a quick rundown of an example. We will need a db for this, you can use anyone be it MYSQL, PostGres, MariaDB. I am biased towards MariaDB hence our example will be using mariadb. To set up Mariadb, you can refer to [this article](https://linuxize.com/post/how-to-install-mariadb-on-ubuntu-18-04/). 
 
@@ -35,7 +35,7 @@ Since we will get a free introduction in this article as we intend to build some
 ```scala
 sbt -Dsbt.version=0.13.15 new akka/akka-http-quickstart-scala.g8
 ```
-Once you fill out the necessary information, including package name, version of Akka and name of project, you can import the project into Intelij.
+Once you fill out the necessary information, including package name, version of Akka and name of the project, you can import the project into Intelij.
 
 This is as simple as open Intelij => Files => Open and navigate to your newly created file.
 
@@ -93,11 +93,11 @@ database {
 }
 ```
 
-Also, it's good to use a migration package since you still need to have a mapping of the representation of your DB columns when slick wants to create new table in your db 
+Also, it's good to use a migration package since you still need to have a mapping of the representation of your DB columns when slick wants to create a new table in your db 
 
 We are using `flyway` package to handle Data base migration. For anyone with experience with python, flyway is just like alembic. One you had the package into your sbt file we should be fine.
 
-Next will be to create a sql for your table, you can add every new versions of your sql update in your resource folder. Also, there is an important way in naming your sql file this is to preserve versioning, the syntax for naming is `VX__Information.sql` where `VX` is the latest version of your migration and it's changes, and `Information` is basically what the version is adding. A concrete nameing example is `V1__Create_user_table.sql`, and sample of such file is as shown below:
+Next will be to create an sql for your table, you can add every new version of your sql update in your resource folder. Also, there is an important way in naming your sql file this is to preserve versioning, the syntax for naming is `VX__Information.sql` where `VX` is the latest version of your migration and its changes, and `Information` is basically what the version is adding. A concrete naming example is `V1__Create_user_table.sql`, a sample of such file is as shown below:
 
 ```sql
 
@@ -180,7 +180,7 @@ trait DatabaseConfig extends Config {
       implicit val session: Session = db.createSession()
 }
 ```
-Now that we have all this set up we can now create our `TableQuery` for our user sql file and also implement the various the operations we will be doing on the users table. **TableQuery** class basically allows you to map your Table pattern in your code to your database table so that we continue to write db queries as scala syntax and we get the promise of writing queries as scala collection which slick promised us.
+Now that we have all this set up we can now create our `TableQuery` for our user SQL file and also implement the various the operations we will be applying on the users table. **TableQuery** class basically allows you to map your Table pattern in your code to your database table so that we continue to write db queries as scala syntax and we get the promise of writing queries as scala collection which slick promised us.
 
 Therefore, our `UserTable.scala` looks like this:
 
@@ -239,7 +239,7 @@ object UsersDao extends BaseDao {
 }
 ```
 
-Wit this done, we are almost done, we can basically now be making our requests and interacting with db based on whatever it is we want to do.
+With this done, we are almost done, we can basically now be making our requests and interacting with db based on whatever it is we want to do.
 So our toy example will require me to write my service that once you send to your web address, you get to use actors to perform non-blocking operations on the request. So we now have Actor for this. The remaining code is based more on implementing a service with akka-http, you can get a glimpse into the very fundamental of akka-http in one of my article [here](https://medium.com/@Babatee760/simple-web-api-with-akka-http-and-redis-database-f9b3826f711a). I basically extended the approach in the article to leverage the use of Actor, so that we move towards a concurrent approach to developing web services.
 
 Let's create our own `UserRegistryActor.scala`
