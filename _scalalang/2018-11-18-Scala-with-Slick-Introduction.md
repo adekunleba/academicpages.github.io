@@ -38,10 +38,7 @@ This is as simple as open Intelij => Files => Open and navigate to your newly cr
 
 This seed project gives you a lot free of charge which we will just basically extend for our case since our main aim is to use slick with this minimal web service. 
 
-#### Slick and Scala Proper
-
-**Update Sbt for slick**
-
+#### Slick and Scala 
 
 To use slick in your project, you need to add slick as dependency and also add the driver for the database you are using, in our case we are using Mariadb hence mysql driver it is, for postgres you can get the driver from Maven Repository.
 Finally, our `build.sbt` should look like this:
