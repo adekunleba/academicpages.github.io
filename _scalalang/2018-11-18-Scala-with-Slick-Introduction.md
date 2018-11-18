@@ -4,7 +4,7 @@ collection: scalalang
 permalink: /scalalang/scalaandslick
 ---
 
-<figure class="one">
+<figure>
 	<img src="/images/scala_slick.png">
 </figure>
 
