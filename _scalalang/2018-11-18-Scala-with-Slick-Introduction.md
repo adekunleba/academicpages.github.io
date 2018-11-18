@@ -1,3 +1,10 @@
+---
+title: "Scala and Slick - An Introduction"
+collection: scalalang
+permalink: /scalalang/scalaandslick
+---
+
+
 In this article, I am going to explain working with Scala and slick, this is a tutorial to help beginners get a hang of slick as well as introduce to the concept of Scala Programming.
 
 Why I love scala is it's because of it's expressiveness, it allows developers to program with utmost ease.
