@@ -12,25 +12,26 @@ In this article, I am going to explain working with Scala and slick, this is a t
 
 Why I love scala is because of its expressiveness, it allows developers to program with utmost ease.
 
-Slick and it's properties that make it awesome
+**Slick and it's properties that make it awesome:**
+
 Slick allows you to do database query as though you are working with Scala collections i.e it gives you a bonus point of being able to run `map`, `filter`, `flatmap` etc. on your stored data.
 
 Apart from this, you get compilation Type Checks, hence you don't have to go into running your application with some hidden bugs.
 
 Also, you get a non-blocking request as part of the bonus for using slick, as slick uses a DBIO Monadic API, you are able to chain operations that you can later flatten out
 
-Let's put this into an example fast, say you have a list and you can apply map to generate a list of list as shown below.
+Let's put this into an example, say you have a list and you can apply map to generate a list of list as shown below.
 
 <script src="https://gist.github.com/adekunleba/3c111a205c5dfd0477bc9ea15a242d75.js">
 </script>
 
 The above `List[Int]` produces a `List[List[Int]]` as per our example, `flatmap` flattens out the inner List, hence you don't have to do `map` then `flatten`. So, let's say you do a DB query that can return with map `List[List[SomeType]]`, because of the monadic API in slick you get a `flatmap` over many of your queries.
 
-Now that we have established what benefits we can get with Slick let's do a quick rundown of an example. We will need a db for this, you can use anyone be it MYSQL, PostGres, MariaDB. I am biased towards MariaDB hence our example will be using mariadb. To set up Mariadb, you can refer to [this article](https://linuxize.com/post/how-to-install-mariadb-on-ubuntu-18-04/). 
+Now that we have established what benefits we can get with Slick let's do a quick rundown of an example. We will need a db for this, you can use anyone be it MYSQL, PostGres, MariaDB. I am biased towards MariaDB hence our example will be using MariaDB. To set up Mariadb, you can refer to [this article](https://linuxize.com/post/how-to-install-mariadb-on-ubuntu-18-04/). 
 
-Now that we have mariadb installed we can start writing our scala application to interact with mariadb.
+Now that we have MariaDB installed we can start writing our scala application to interact with MariaDB.
 
-Since we will get a free introduction in this article as we intend to build something close to what a real-life software engineer get's in practice for this example, I like to use one of scala seed project to kickstart my scala projects.
+In this article, I intend to introduce how to build something close to what a real-life software engineer get's to build in practice, so, I like to use one of scala seed project to kickstart my scala application.
 
 ```scala
 sbt -Dsbt.version=0.13.15 new akka/akka-http-quickstart-scala.g8
@@ -43,7 +44,7 @@ This seed project gives you a lot free of charge which we will just basically ex
 
 #### Slick and Scala 
 
-To use slick in your project, you need to add slick as dependency and also add the driver for the database you are using, in our case we are using Mariadb hence mysql driver it is, for postgres you can get the driver from Maven Repository.
+To use Slick in your project, you need to add Slick package as dependency and also add the driver for the database you are using, in our case we are using MariaDB hence MYSQL driver it is, for PostGres you can get the driver from Maven Repository.
 Finally, our `build.sbt` should look like this:
 
 ```scala
@@ -95,7 +96,7 @@ database {
 
 Also, it's good to use a migration package since you still need to have a mapping of the representation of your DB columns when slick wants to create a new table in your db 
 
-We are using `flyway` package to handle Data base migration. For anyone with experience with python, flyway is just like alembic. One you had the package into your sbt file we should be fine.
+We are using `flyway` package to handle Database migration. For anyone with experience with python, flyway is just like alembic. Once you had the package into your sbt file we should be fine.
 
 Next will be to create an sql for your table, you can add every new version of your sql update in your resource folder. Also, there is an important way in naming your sql file this is to preserve versioning, the syntax for naming is `VX__Information.sql` where `VX` is the latest version of your migration and its changes, and `Information` is basically what the version is adding. A concrete naming example is `V1__Create_user_table.sql`, a sample of such file is as shown below:
 
@@ -180,7 +181,7 @@ trait DatabaseConfig extends Config {
       implicit val session: Session = db.createSession()
 }
 ```
-Now that we have all this set up we can now create our `TableQuery` for our user SQL file and also implement the various the operations we will be applying on the users table. **TableQuery** class basically allows you to map your Table pattern in your code to your database table so that we continue to write db queries as scala syntax and we get the promise of writing queries as scala collection which slick promised us.
+Now that we have all this set up we can now create our `TableQuery` for our user SQL file and also implement the various the operations we will be applying on the users table. **TableQuery** class allows you to map your Table pattern in your code to your database table so that we continue to write db queries as scala syntax and we get the promise of writing queries as scala collection which slick promised us.
 
 Therefore, our `UserTable.scala` looks like this:
 
@@ -210,9 +211,9 @@ class UsersTable(tag: Tag) extends Table[User](tag, "users") {
   def * = (id.?, username, password, location, gender) <> ((User.apply _).tupled, User.unapply)
 }
 ```
-The case class is important since it's what connects other parts of our application with the table name in db i.e your `User` case class now embodies the columns of your user table in db hence you basically can apply you scala functions on `User` as though they are columns in your db.
+The case class is important since it's what connects other parts of our application with the table name in db i.e your `User` case class now embodies the columns of your user table in db hence you can apply your scala functions on `User` as though they are columns in your db.
 
-To define the operations on your user table we create another file `UsersDao.scala`. Also, usually for every query to db with slick, you need to do a `db.run()` to execute the query, you can basically abstract away that portion by providing it as an implicit parameter such that when you just call your operations, you app picks it up as an action and implement `db.run(operation)` on it without you having to always call db.run().
+To define the operations on your user table we create another file `UsersDao.scala`. Also, usually for every query to db with slick, you need to do a `db.run()` to execute the query, you can abstract away that portion by providing it as an implicit parameter such that when you just call your operations, you app picks it up as an action and implement `db.run(operation)` on it without you having to always call db.run().
 ```scala
 import slick.jdbc.MySQLProfile.api._
 
@@ -348,6 +349,6 @@ Finally, the entity that connects your client to your backend service is the rou
       }
 
 ```
-So with this we have built a minimal backend, we can scale this by basically adding more operations based on request and what we intend to achieve, also we can interact with more tables on our DB, by basically following the same approach of creating TableQuery.
+With this we have built a minimal backend. We can scale this by adding more operations based on request and what we intend to achieve, also we can interact with more tables on our DB by following the same approach of creating TableQuery.
 
 You can play around with the codes for this article by cloning the [github repository](https://github.com/adekunleba/sample-slick)
