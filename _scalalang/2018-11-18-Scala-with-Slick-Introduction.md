@@ -345,4 +345,6 @@ Finally, the entity that connects your client to your backend service is the rou
       }
 
 ```
-So with this we have build a minimal backend, we can scale this by basically adding more operations based on request and what we intend to achieve, also we can interacts with more tables on our DB, by basically following the same approach of creating TableQuery.
+So with this we have built a minimal backend, we can scale this by basically adding more operations based on request and what we intend to achieve, also we can interact with more tables on our DB, by basically following the same approach of creating TableQuery.
+
+You can play around with the codes for this article by cloning the [github repository](https://github.com/adekunleba/sample-slick)
