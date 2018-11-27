@@ -8,8 +8,9 @@ Recently, I was charged with the responsibility of having to re-train a model we
 
 We did retrained the model and did a test. Here is a sample(figures are changed but reflects the error distribution anyways) result of our test using different thresholds around the probability between the two classes to guage the threshold to be used in production:
 
-Old Model Threshold results on test data:
 Normal acuracy based results:
+**Old Model Threshold results on test data:**
+
 
 | Threshold      | Spoof Image Error | Live Image Error|
 | ---------------| ------------------|-----------------|
@@ -20,7 +21,8 @@ Normal acuracy based results:
 |  0.5           |       7 %         |     8 %         |
 
 
-New Model Threshold results on test data after retraining:
+**New Model Threshold results on test data after retraining:**
+
 | Threshold      | Spoof Image Error | Live Image Error|
 | ---------------| ------------------|-----------------|
 |  0.2           |        4 %        |     4 %         |
