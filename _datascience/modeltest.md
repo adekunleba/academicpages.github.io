@@ -2,6 +2,7 @@
 title: "Confirming a Better Model - Importance of Precision and Recall"
 excerpt: "Given a modified machine learning model, how do you know if your newly trained model will make any difference?"
 collection: datascience
+comment: true
 ---
 
 Recently, I was charged with the responsibility of having to re-train a model we had already released into production but found out there were complaints about False positive results, which is actually critical to the process flow of our application. We developed a simple  model to detect if a captured image is a spoof or a live image. This is to be used in our normal day to day application process, the end business goal is to be able to catch Spoof images correctly and yes we did that, however the challenge was that we now have a lot of Live images being recognized as spoof, the onus is to check how to make the model better without so much lose to it's ability to catch spoof.
