@@ -10,6 +10,7 @@ Recently, I was charged with the responsibility of having to re-train a model we
 We did retrained the model and did a test. Here is a sample(figures are changed but reflects the error distribution anyways) result of our test using different thresholds around the probability between the two classes to guage the threshold to be used in production:
 
 Normal acuracy based results:
+
 **Old Model Threshold results on test data:**
 
 
