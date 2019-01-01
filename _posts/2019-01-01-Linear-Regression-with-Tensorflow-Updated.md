@@ -11,7 +11,7 @@ However, with this comes a new way to approach working with Tensorflow, I made s
 
 It allows to build an imperative, define-by-run approach to doing machine learning, and it has auto differentiation that allows you to automatically calculate the gradient of your forward pass operations.
 
-**Basic Operations With Tensorflo**
+**Basic Operations With Tensorflow**
 
 Let's go into how to do some basic operations in Tensorflow. It is important to remember that Tensorflow is a library that allows you to do `numerical computation`, so many times, people have had to forget this notion and only see Tensorflow as a Deep Neural Network Library, this conciousness need to be allowed to settle in for anybody that wants to use Tensorflow to maximize data. I believe this is the reason why every Tensorflow basic tutorial starts with a Linear Regression, so that the `numerical computation` foundation of Tensorflow is not forgotten.
 
