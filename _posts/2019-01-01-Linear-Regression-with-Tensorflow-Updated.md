@@ -15,7 +15,7 @@ It allows to build an imperative, define-by-run approach to doing machine learni
 
 Let's go into how to do some basic operations in Tensorflow. It is important to remember that Tensorflow is a library that allows you to do `numerical computation`, so many times, people have had to forget this notion and only see Tensorflow as a Deep Neural Network Library, we generally need to settle on the fact that Tensorflow is a library that helps you maximize data, by abstracting away the pain of building **many** machine learning models including Linear and Logistic Regression models. I believe this is the reason why every Tensorflow basic tutorial starts with a Linear Regression, so that the `numerical computation` foundation of Tensorflow is not forgotten.
 
-To begin tensorflow in eager execution, it's imperative that we import tensorflow and establish that we want to use eager execution at the top of our application. Once enabled once, it's enabled for the run-time of the current application.
+To begin tensorflow in eager execution, it's imperative that we import tensorflow and establish that we want to use eager execution at the top of our application. Once enabled the first time, it's enabled for the run-time of the current application.
 
 ```python
 import tensorflow as tf
@@ -133,7 +133,7 @@ data = make_synthetic_data(true_w, true_b, noise_level, batch_size, 20)
 The next procedure is usually to explore your data, however, in our case we are working with a toy example, we can skip that part and move on to the meat of what we are actually here for - how will tensorflow help us build a model against this data.
 
 The approach is highlighted thus:
-* Make a model - we use `tf.keras.layers.Dense`. The question that came to mind with this is how does Dense layer represents regression? Dense layer data is usually a flattened array which is synonymous to your normal `X` data with many columns on which you want to try and get your `weight` and `bias`. Furthermore, the loss function used, helps the model to fully understand what we are trying to do.
+* Make a model - we use `tf.keras.layers.Dense`. The question that came to mind with this is how does Dense layer represents regression? Dense layer input data is usually a flattened array which is synonymous to your normal `X` data with many columns on which you want to try and get your `weight` and `bias`. Furthermore, the loss function used, helps the model to fully understand what we are trying to do.
 * Write the loss function, for our sake, it's going to be a Mean Square Error, which is one of the `loss functions` used in training Regression models.
 * Write the auto-differentiation algorithm
 * Write the optimizer to use to train the model.
