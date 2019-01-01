@@ -1,10 +1,10 @@
 Yaay!!! Welcome to the new year 2019, this is going to be my first post in the year, I am glad about it as I get to start the year on a very high vibe. 
 
-To the matter on ground, Data Science and Machine learning has come a long way and still very much evolving fast, one of the tool that has helped in great advancement in Machine learning especially is Tensorflow, I last posted about starting out with Tensorflow with the most basic of example - building a linear regression model, however a lot has change. Some of things that have changed include the following:
+To the matter on ground, Data Science and Machine learning has come a long way and still very much evolving fast, one of the tool that has helped achieve great advancement in Machine learning in particular is Tensorflow, I [posted](https://adekunleba.github.io/Linear-Model-with-Tensorflow/) sometimes ago, about starting out with Tensorflow with the most basic of example - building a linear regression model, however a lot has change. Some of things that have changed include the following:
 
 * Tensorflow now uses tf.keras as it's base model definition
 * Tensorflow uses `eager execution` as it's default approach to running your models, rather than the initial `graph and session` approach
-* A lot of clean-ups are also on the way in `tf.slim` api of Tensorflow, basically they seems to have been merged to the core api.
+* A lot of clean-ups are also on the way in `tf.slim` api of Tensorflow is being merged to the core api.
 * Tensorflow now feels more python-like than the initial C-like presentation it forces developer into.
 
 However, with this comes a new way to approach working with Tensorflow, I made some examples on how to quickly get started with Tensorflow in the `Eager Execution` mode. This mode is actually painless compared to what we had in Tensorflow even exactly 1 year ago.
@@ -13,7 +13,7 @@ It allows to build an imperative, define-by-run approach to doing machine learni
 
 **Basic Operations With Tensorflow**
 
-Let's go into how to do some basic operations in Tensorflow. It is important to remember that Tensorflow is a library that allows you to do `numerical computation`, so many times, people have had to forget this notion and only see Tensorflow as a Deep Neural Network Library, this conciousness need to be allowed to settle in for anybody that wants to use Tensorflow to maximize data. I believe this is the reason why every Tensorflow basic tutorial starts with a Linear Regression, so that the `numerical computation` foundation of Tensorflow is not forgotten.
+Let's go into how to do some basic operations in Tensorflow. It is important to remember that Tensorflow is a library that allows you to do `numerical computation`, so many times, people have had to forget this notion and only see Tensorflow as a Deep Neural Network Library, we generally need to settle on the fact that Tensorflow is a library that helps you maximize data, by abstracting away the pain of building **many** machine learning models including Linear and Logistic Regression models. I believe this is the reason why every Tensorflow basic tutorial starts with a Linear Regression, so that the `numerical computation` foundation of Tensorflow is not forgotten.
 
 To begin tensorflow in eager execution, it's imperative that we import tensorflow and establish that we want to use eager execution at the top of our application. Once enabled once, it's enabled for the run-time of the current application.
 
