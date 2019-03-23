@@ -5,7 +5,7 @@ permalink: /scalalang/sparkscala
 ---
 
 <figure>
-	<img src="/images/scalaspark.jpg">
+	<img src="/images/sparkheadersimple.jpg">
 </figure>
 
 This article is a follow-up note of the March edition of Scala-Lagos meet-up where we discussed about Apache Spark, it's capability and use-cases as well as a brief example in scala on Tweets. It is aimed at giving a good introduction into the strenght of Apache spark and the underlying theories behind these strenghts.
