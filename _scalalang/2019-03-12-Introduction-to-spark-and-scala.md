@@ -22,7 +22,7 @@ Apache Spark is a highly developed engine for data processing in large scale ove
 
 Apache Spark owns its win to the fundamental idea behind it's development - which is to beat the limitations with MapReduce, a key component of Hadoop, thus far it's processing power and analytics capability is several magnitude, 100x, better than MapReduce and with the advantage of an **In-memory processing capability** in that, it is able to save it's data in compute engine's memory (RAM) and also perform data processing over this data stored in-memory, thus eliminating the need for a continous Input/Output(I/O) of writing/reading data from disk.
 
-To effectively do this, Spark relies on the use of a specialized data model known as Resilient Distributed Dataset (RDD), that can be effectively stored in-memory and allows for various types of operations. RDD are immutable i.e read-only format of data items that is stored in-mmory as well as effectively distributed across clusters of machine, one can think of RDD as a data abstraction over raw data format e.g String, Int, that allows Spark does it's work very well.
+To effectively do this, Spark relies on the use of a specialized data model known as **Resilient Distributed Dataset (RDD)**, that can be effectively stored in-memory and allows for various types of operations. RDD are immutable i.e read-only format of data items that is stored in-mmory as well as effectively distributed across clusters of machine, one can think of RDD as a data abstraction over raw data format e.g String, Int, that allows Spark does it's work very well.
 
 <figure>
 	<img src="/images/rdd.png" width="50" height="30">
