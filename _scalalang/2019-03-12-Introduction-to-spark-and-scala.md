@@ -8,7 +8,7 @@ permalink: /scalalang/sparkscala
 	<img src="/images/sparkheadersimple.png" width="50" height="30">
 </figure>
 
-This article is a follow-up note of the March edition of Scala-Lagos meet-up where we discussed about Apache Spark, it's capability and use-cases as well as a brief example in scala on Tweets. It is aimed at giving a good introduction into the strenght of Apache spark and the underlying theories behind these strenghts.
+This article is a follow-up note for the March edition of Scala-Lagos meet-up where we discussed about Apache Spark, it's capability and use-cases as well as a brief example in which the scala API was used for sample data processing on Tweets. It is aimed at giving a good introduction into the strenght of Apache spark and the underlying theories behind these strenghts.
 
 ## Spark - An all encompassing Data processing Platform
 
