@@ -1,7 +1,7 @@
 Yaay!!! Welcome to the new year 2019, this is going to be my first post in the year, I am glad about it as I get to start the year on a very high vibe. 
 <!-- 
 <figure>
-	<img src="/images/tf_eager.PNG">
+	<img src="/images/tfeage.png">
 </figure> -->
 
 To the matter on ground, Data Science and Machine learning has come a long way and still very much evolving fast, one of the tool that has helped achieve great advancement in Machine learning in particular is Tensorflow, I [posted](https://adekunleba.github.io/Linear-Model-with-Tensorflow/) sometimes ago, about starting out with Tensorflow with the most basic of example - building a linear regression model, however a lot has change. Some of things that have changed include the following:
