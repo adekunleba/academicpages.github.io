@@ -91,7 +91,7 @@ As mentioned earlier, Dataset is the RDD-like optimised abstraction for Structur
 
 Spark DataFrame can further be viewed as Dataset organized in named columns and presents as an equivalent relational table that you can use SQL-like query or even HQL. Thus on Spark DataFrame any SQL-like operations such as `SELECT COLUMN-NAME`, `GROUPBY` and `COUNT` to mention a few. The interesting thing about Spark DataFrame is that this can be done programatically using any of the available spark APIs - Java, Scala, Python or R as well as converting the DataFrame to a _temporary_ SQL table on which pure SQL queries can be performed on.
 
-Conclusion.
+### Conclusion.
 To conclude this introduction to Spark, a sample scala application - wordcount over tweets is [provided](https://github.com/LagosScala/introduction-scala-spark), it is developed in the scala API. The application can be run in your favorite IDE such as InteliJ or a Notebook like in Databricks or Apache Zeppelin.
 In this article, some of the major points covered are:
 * Description of Spark as a next generation data processing engine
