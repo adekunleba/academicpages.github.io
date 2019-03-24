@@ -22,7 +22,7 @@ Apache Spark is a highly developed engine for data processing in large scale ove
 
 Apache Spark owns its win to the fundamental idea behind it's development - which is to beat the limitations with MapReduce, a key component of Hadoop, thus far it's processing power and analytics capability is several magnitude, 100x, better than MapReduce and with the advantage of an **In-memory processing capability** in that, it is able to save it's data in compute engine's memory (RAM) and also perform data processing over this data stored in-memory, thus eliminating the need for a continous Input/Output(I/O) of writing/reading data from disk.
 
-To effectively do this, Spark relies on the use of a specialized data model known as **Resilient Distributed Dataset (RDD)**, that can be effectively stored in-memory and allows for various types of operations. RDD are immutable i.e read-only format of data items that is stored in-mmory as well as effectively distributed across clusters of machine, one can think of RDD as a data abstraction over raw data format e.g String, Int, that allows Spark does it's work very well.
+To effectively do this, Spark relies on the use of a specialized data model known as **Resilient Distributed Dataset (RDD)**, that can be effectively stored in-memory and allows for various types of operations. RDD are immutable i.e read-only format of data items that is stored in-mmory as well as effectively distributed across clusters of machine, one can think of RDD as a data abstraction over raw data format e.g String, Int, that allows Spark does its work very well.
 
 <figure>
 	<img src="/images/rdd.png" width="50" height="30">
@@ -30,7 +30,7 @@ To effectively do this, Spark relies on the use of a specialized data model know
 
 Beyond RDD, Spark also makes use of Direct Acyclic Graph (DAG) to track computations on RDDs, this approach optimizes data processing by leveraging the job flows to properly assign performance optimization, this also have an added advantage that helps Spark manage errors when there is job or operation failures through an effective rollback mechanism. Therefore, in cases of errors, Spark don't need to start computation from the beginning, it can easily make use of the RDD computed before the error and pass it through the fixed operation. This is why Spark is designated as a fault-tolerant processing engine.
 
-Spark also leverage a cluster manager to properly run it's job across a cluster of machines, the cluster managers helps with resource allocation and scheduling of job in a **master - worker** fashion. A Master distributes jobs and allocate necessary resources to the workers in the cluster, and co-ordinate the worker's activity such that in cases of a worker being unavailable, the job is re-assigened to another worker. Bringing together the idea of in-memory processing with RDD, DAG inhenrent in Spark, resource allocation and scheduling by the cluster manager, Spark has gone to be an ever progressing engine in the world of fast big data processing.
+Spark also leverage a cluster manager to properly run its job across a cluster of machines, the cluster managers helps with resource allocation and scheduling of job in a **master - worker** fashion. A Master distributes jobs and allocate necessary resources to the workers in the cluster, and co-ordinate the worker's activity such that in cases of a worker being unavailable, the job is re-assigened to another worker. Bringing together the idea of in-memory processing with RDD, DAG inhenrent in Spark, resource allocation and scheduling by the cluster manager, Spark has gone to be an ever progressing engine in the world of fast big data processing.
 
 
 ## Spark Data Processing Capabilities.
@@ -38,7 +38,7 @@ Spark also leverage a cluster manager to properly run it's job across a cluster 
 ### Structured SQL for Complex Aanalytics with basic SQL
 A well known capablility of Apache spark is how it allows data scientist to easily perform analysis in an SQL-like format over very large amount of data. Leveraging spark-core internals and an abstraction over the underlying RDD, Spark provides what is known as DataFrames, an abstraction that integrates relational processing with Spark's functional programming API. This is done, by adding structural information to the data to give semi-structure or full structure to the data using schema with column names and with this, a dataset can be directly queried using the column names opening another level to data processing.
 
-Starting at version 1.6 of Spark, there is the Dataset API that comes with the Structured SQL API, it provides an high-level SQL-like capability to somewhat low-level RDD of Spark-core. In literal terms, Dataset API is an abstraction that gives an SQL feel and execution optimization to spark RDD by using the optimized sql execution engine without also loosing the functional operations that comes with RDD. Both the Dataset API and Dataframe API forms the Structured SQL API.
+Starting at version 1.6 of Spark, there is the Dataset API that comes with the Structured SQL API, it provides an high-level SQL-like capability to somewhat low-level RDD of Spark-core. In literal terms, Dataset API is an abstraction that gives an SQL feel and execution optimization to spark RDD by using the optimized sql execution engine without also losing the functional operations that come with RDD. Both the Dataset API and Dataframe API forms the Structured SQL API.
 
 
 ### Spark Streaming for real-time analytics
@@ -52,7 +52,7 @@ Spark also provides machine learning capability by providing machine learning al
 
 ### GraphX Graph Processing Engine.
 
-The fourth data processing capability is inherent in it's capability to perform analysis on Graph data e.g in social network analysis. Spark's GrpahX API is a collection of ETL processing operations and graph algorithms that is optimized for large scale implementations on data.
+The fourth data processing capability is inherent in its capability to perform analysis on Graph data e.g in social network analysis. Spark's GraphX API is a collection of ETL processing operations and graph algorithms that is optimized for large scale implementations on data.
 
 
 ### Starting Spark for the various APIs
