@@ -32,7 +32,7 @@ Beyond RDD, Spark also makes use of Direct Acyclic Graph (DAG) to track computat
 
 Spark also leverage a cluster manager to properly run its job across a cluster of machines, the cluster managers helps with resource allocation and scheduling of job in a **master - worker** fashion. A Master distributes jobs and allocate necessary resources to the workers in the cluster, and co-ordinate the worker's activity such that in cases of a worker being unavailable, the job is re-assigened to another worker. 
 
-With the idea of in-memory processing using RDD abtstraction, DAG inhenrent, resource allocation and scheduling by the cluster manager, Spark has gone to be an ever progressing engine in the world of fast big data processing.
+With the idea of in-memory processing using RDD abtstraction, DAG approach to chain computations, resource allocation and scheduling by the cluster manager, Spark has gone to be an ever progressing engine in the world of fast big data processing.
 
 
 ## Spark Data Processing Capabilities.
