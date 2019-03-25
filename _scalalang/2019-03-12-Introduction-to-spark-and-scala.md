@@ -30,7 +30,9 @@ To effectively do this, Spark relies on the use of a specialized data model know
 
 Beyond RDD, Spark also makes use of Direct Acyclic Graph (DAG) to track computations on RDDs, this approach optimizes data processing by leveraging the job flows to properly assign performance optimization, this also have an added advantage that helps Spark manage errors when there is job or operation failures through an effective rollback mechanism. Therefore, in cases of errors, Spark don't need to start computation from the beginning, it can easily make use of the RDD computed before the error and pass it through the fixed operation. This is why Spark is designated as a fault-tolerant processing engine.
 
-Spark also leverage a cluster manager to properly run its job across a cluster of machines, the cluster managers helps with resource allocation and scheduling of job in a **master - worker** fashion. A Master distributes jobs and allocate necessary resources to the workers in the cluster, and co-ordinate the worker's activity such that in cases of a worker being unavailable, the job is re-assigened to another worker. With the idea of in-memory processing using RDD abtstraction, DAG inhenrent, resource allocation and scheduling by the cluster manager, Spark has gone to be an ever progressing engine in the world of fast big data processing.
+Spark also leverage a cluster manager to properly run its job across a cluster of machines, the cluster managers helps with resource allocation and scheduling of job in a **master - worker** fashion. A Master distributes jobs and allocate necessary resources to the workers in the cluster, and co-ordinate the worker's activity such that in cases of a worker being unavailable, the job is re-assigened to another worker. 
+
+With the idea of in-memory processing using RDD abtstraction, DAG inhenrent, resource allocation and scheduling by the cluster manager, Spark has gone to be an ever progressing engine in the world of fast big data processing.
 
 
 ## Spark Data Processing Capabilities.
