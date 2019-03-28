@@ -47,7 +47,7 @@ Discretized Stream of data means RDD data obtained in small real-time batches.
 
 ### MLLib/ML Machine learning for predictive modelling
 
-Spark also provides machine learning capability by providing machine learning algorithms, data featurization algorithms and pipelining capabilities optimized to be implemented in scale over large amount of data. Spark Machine learning library's goal is summarized thus:
+Spark also provides machine learning capability by providing machine learning algorithms, data featurization algorithms and pipelining capabilities optimized to be implemented to scale over large amount of data. Spark Machine learning library's goal is summarized thus:
 > to make practical machine learning scalable and easy.
 
 ### GraphX Graph Processing Engine.
@@ -55,10 +55,11 @@ Spark also provides machine learning capability by providing machine learning al
 The fourth data processing capability is inherent in its capability to perform analysis on Graph data e.g in social network analysis. Spark's GraphX API is a collection of ETL processing operations and graph algorithms that are optimized for large scale implementations on data.
 
 
-### Starting Spark for the various APIs
-There are different entry points for Spark in the case where RDD usage is the use case, Structured SQL when using Dataset or DataFrame API and Streaming in spark.
+### Initializing Spark.
+There are several approaches to initialize a Spark application depending on the use case, the application may be one that leverages RDD, Spark Streaming, Structured SQL with Dataset or DataFrame. Therefore, it is important to understand how to initialize these different Spark instances. 
+
 1. **RDD with Spark Context:**
-Operations with spark-core are initiated by creating a spark context depending on a number of configurations such as the master location, application names, memory size of executors to mention a few.
+Operations with spark-core are initiated by creating a spark context, the context is created with a number of configurations such as the master location, application names, memory size of executors to mention a few.
 
 Here are two ways to initiate a spark context as well as how to make an RDD with the created spark context.
 <script src="https://gist.github.com/adekunleba/8f37c5d40c0da32ff71f388ad909b4c5.js"></script>
@@ -74,11 +75,11 @@ The other entry point to Spark is using the Streaming Context when interacting w
 <script src="https://gist.github.com/adekunleba/ff97b4f7bbe8614155d86462458fa3ec.js"></script>
 
 
-Operations on RDD, Datasets and DataFrame
+## Operations on RDD, Datasets and DataFrame
 
 Having seen a good glimpse into the capability of Spark, it's important to show some operations that can be applied over the various spark's abstraction.
 
-#### 1. RDD
+### 1. RDD
 
 RDD, which is Spark's main abstraction and more at the center of the spark-core has two basic operations.
  * Transformations - Transformations operations are applied on existing RDD to create new and changed RDDs. Example of such operations include `map`, `filter`and `flatMap` to mention a few. A full list of transformation operations in Spark can be found [here](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations).
@@ -87,11 +88,11 @@ Once spark Context has been used to create an RDD, these operations can be appli
 
  * Actions - Actions operations triggers an actual computation in Spark, it drives computation to return a value to the driver program. The idea of action operations is to return all computations from the cluster to the driver to produce a single result in actual Data types away from the RDD abstraction of spark. Care must be taken when initiating action operations because it's important that the driver has enough memory to manage such data. Example of action operations includes `reduce`, `collect` and `take` to mention a few. The full list can be found [here](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions).
 
-#### 2. DataSet/DataFrame
+### 2. DataSet/DataFrame
 
-As mentioned earlier, Dataset is the RDD-like optimized abstraction for Structured SQL that allows both relational operations like in SQL and functional operations like `map`, `filter` and many other similar operations that is possible with RDD. It is important to emphasize that not all DataFrame SQL-like capability are fully available with Dataset however there are many column-based functions that are still very much available with Dataset. Also, there is an added advantage of _encoding_ Datasets in domain-specific objects i.e mapping a dataset to a _type T_ this helps extends the functional capabilities that are possible with Spark Dataset adding also the ability to perform powerful _lambda_ operations.
+As mentioned earlier, Dataset is the RDD-like optimized abstraction for Structured SQL that allows both relational operations like in SQL and functional operations like `map`, `filter` and many other similar operations that are possible with RDD. It is important to emphasize that not all DataFrame SQL-like capability are fully available with Dataset however there are many column-based functions that are still very much available with Dataset. Also, there is an added advantage of _encoding_ Datasets in domain-specific objects i.e mapping a dataset to a _type T_ this helps extends the functional capabilities that are possible with Spark Dataset adding also the ability to perform powerful _lambda_ operations.
 
-Spark DataFrame can further be viewed as Dataset organized in named columns and presents as an equivalent relational table that you can use SQL-like query or even HQL. Thus, on Spark DataFrame performing any SQL-like operations such as `SELECT COLUMN-NAME`, `GROUPBY` and `COUNT` to mention a few becomes relatively easy. Another interesting thing about Spark DataFrame is that these operations can be done programatically using any of the available spark APIs - Java, Scala, Python or R as well as converting the DataFrame to a _temporary_ SQL table on which pure SQL queries can be performed on.
+Spark DataFrame can further be viewed as Dataset organized in named columns and presents as an equivalent relational table that you can use SQL-like query or even HQL. Thus, on Spark DataFrame performing any SQL-like operations such as `SELECT COLUMN-NAME`, `GROUPBY` and `COUNT` to mention a few becomes relatively easy. Another interesting thing about Spark DataFrame is that these operations can be done programatically using any of the available spark APIs - Java, Scala, Python or R as well as converting the DataFrame to a _temporary_ SQL table in which pure SQL queries can be performed on.
 
 ### Conclusion.
 To conclude this introduction to Spark, a sample scala application - wordcount over tweets is [provided](https://github.com/LagosScala/introduction-scala-spark), it is developed in the scala API. The application can be run in your favorite IDE such as InteliJ or a Notebook like in Databricks or Apache Zeppelin.
