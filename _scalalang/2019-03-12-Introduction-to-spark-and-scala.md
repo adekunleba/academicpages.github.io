@@ -55,7 +55,7 @@ Spark also provides machine learning capability by providing machine learning al
 The fourth data processing capability is inherent in its capability to perform analysis on Graph data e.g in social network analysis. Spark's GraphX API is a collection of ETL processing operations and graph algorithms that are optimized for large scale implementations on data.
 
 
-### Initializing Spark.
+## Initializing Spark.
 There are several approaches to initialize a Spark application depending on the use case, the application may be one that leverages RDD, Spark Streaming, Structured SQL with Dataset or DataFrame. Therefore, it is important to understand how to initialize these different Spark instances. 
 
 1. **RDD with Spark Context:**
