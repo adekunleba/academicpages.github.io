@@ -58,19 +58,19 @@ The fourth data processing capability is inherent in its capability to perform a
 ## Initializing Spark.
 There are several approaches to initialize a Spark application depending on the use case, the application may be one that leverages RDD, Spark Streaming, Structured SQL with Dataset or DataFrame. Therefore, it is important to understand how to initialize these different Spark instances. 
 
-1. **RDD with Spark Context:**
+### 1. RDD with Spark Context:
 Operations with spark-core are initiated by creating a spark context, the context is created with a number of configurations such as the master location, application names, memory size of executors to mention a few.
 
 Here are two ways to initiate a spark context as well as how to make an RDD with the created spark context.
 <script src="https://gist.github.com/adekunleba/8f37c5d40c0da32ff71f388ad909b4c5.js"></script>
 
-2. **DataFrame/Dataset with Spark Session:**
+### 2. DataFrame/Dataset with Spark Session:
 As observed above, an entry point to Spark could be by using the Spark Context, however, Spark allows direct interaction with the Structured SQL API with Spark Session. It also involves specifying the configuration for the Spark app.
 
 Here is the approach to initiate a Spark Session and create a Dataset and DataFrame with the Session.
 <script src="https://gist.github.com/adekunleba/e64f106d7f8a47edb23aa50eaa7fc421.js"></script>
 
-3. **DStream with Spark Streaming:**
+### 3. DStream with Spark Streaming:
 The other entry point to Spark is using the Streaming Context when interacting with real-time data. An instance of Streaming Context can either be created from a Spark Configuration or a Spark Context. This is shown below
 <script src="https://gist.github.com/adekunleba/ff97b4f7bbe8614155d86462458fa3ec.js"></script>
 
