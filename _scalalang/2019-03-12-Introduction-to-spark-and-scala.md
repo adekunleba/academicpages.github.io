@@ -82,11 +82,11 @@ Having seen a good glimpse into the capability of Spark, it's important to show 
 ### 1. RDD
 
 RDD, which is Spark's main abstraction and more at the center of the spark-core has two basic operations.
- * Transformations - Transformations operations are applied on existing RDD to create new and changed RDDs. Example of such operations include `map`, `filter`and `flatMap` to mention a few. A full list of transformation operations in Spark can be found [here](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations).
+ * __Transformations__ - Transformations operations are applied on existing RDD to create new and changed RDDs. Example of such operations include `map`, `filter`and `flatMap` to mention a few. A full list of transformation operations in Spark can be found [here](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations).
 Once spark Context has been used to create an RDD, these operations can be applied on the RDD as seen in the code sample below. It is important to note that the operations are lazily evaluated in that they are not directly computed until an Action operation is applied.
  <script src="https://gist.github.com/adekunleba/ebacc4b0767298a5d0edb0bfb1194e60.js"></script>
 
- * Actions - Actions operations triggers an actual computation in Spark, it drives computation to return a value to the driver program. The idea of action operations is to return all computations from the cluster to the driver to produce a single result in actual Data types away from the RDD abstraction of spark. Care must be taken when initiating action operations because it's important that the driver has enough memory to manage such data. Example of action operations includes `reduce`, `collect` and `take` to mention a few. The full list can be found [here](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions).
+ * __Actions__ - Actions operations triggers an actual computation in Spark, it drives computation to return a value to the driver program. The idea of action operations is to return all computations from the cluster to the driver to produce a single result in actual Data types away from the RDD abstraction of spark. Care must be taken when initiating action operations because it's important that the driver has enough memory to manage such data. Example of action operations includes `reduce`, `collect` and `take` to mention a few. The full list can be found [here](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions).
 
 ### 2. DataSet/DataFrame
 
