@@ -14,9 +14,9 @@ Components:
 - Developing a jni wrapper for the inference library.
 - Deployment in Android using ndk and android studio.
 
-The first part will be to learn a machine learning algorithm with open cv. In this case we are going to explore the most basic of face recognition algorithm, using Principal component for eigenfaces. The machine learning community is very familiar with this in python especially with tools such as scikit learn, but when production and most especially offline/on-device production comes to mind, the need to do this from a different dimension is expedient.
-Open CV comes with a very good api for learning principal component analysis and it is quite straight forward to learn one you have your data all set up.
-Here is are the steps:
+The first part will be to learn a machine learning algorithm with openCV. In this case we are going to explore the most basic of face recognition algorithm, using Principal component for eigenfaces. The machine learning community is very familiar with this in python especially with tools such as scikit learn, but when production and most especially offline/on-device production comes to mind, the need to do this from a different dimension is expedient.
+OpenCV comes with a very good api for learning principal component analysis and it is quite straight forward to learn once you have your data all set up.
+Here are the steps:
 
 - Set up a cmake project c++ using Opencv.
 The key parts of your CMakeFile.txt is ensuring that there is an opencv library in your project and available for your library to compile. Ideally, before requesting that Cmake find Opencv for you, it is important to have the opencv library installed on your machine.
