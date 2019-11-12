@@ -20,8 +20,8 @@ Here is are the steps:
 
 - Set up a cmake project c++ using Opencv.
 The key parts of your CMakeFile.txt is ensuring that there is an opencv library in your project and available for your library to compile. Ideally, before requesting that Cmake find Opencv for you, it is important to have the opencv library installed on your machine.
-```bash
 
+```bash
 find_package(OpenCV REQUIRED)
 
 include_directories(${OpenCV_INCLUDE_DIRS})
@@ -31,6 +31,7 @@ set(LIBS ${OpenCV_LIBS})
 target_link_libraries(featureCalculation ${LIBS})
 
 ```
+
 _PS: I had to set up my cmake differently for training and inference. I will share both_ 
 
 - Learn a Principal component analysis.
@@ -45,6 +46,7 @@ This part is pretty straight forward. Using `cv::cvtColor(originalimagemat, gray
 `cv::resize(originalImage, containermatofnewimage, size)` for resizing the image and `originalmat::convertTo(newmatnormalized, CV_32FC3, 1/255.0)`
 * Convert all images to a data table - A data table is somewhat like a single table of data where each element is represented as a row, interestingly we can think of each row of our data table as individual images in it's flattened format. The essence of PCA is to project the image values to few columns with distinct representation of that image. Therefore, the data table will have rows equals to the number of images in the training dataset while the columns will be the normalized grayscale values of each image.
 To create the data table, `std::vector` can be used to hold all the images (with the hope that they fit in memory) which is then copied to every row of the data matrix. Here is an helper function that does exactly that from a vector of images mat.
+
 ```cpp
 cv::Mat createdatamatrix(std::vector<cv::Mat> imageArray) {
 
@@ -60,8 +62,8 @@ cv::Mat createdatamatrix(std::vector<cv::Mat> imageArray) {
     return datamatrix;
 
 }
-
 ```
+
 `cv::reshape()` helps transform mat arrays to different shapes, with `(1, 1)` it literally means we want the data to exist in a single row.
 * Learn the actual Pricipal component analysis algorithm.
 Now that we have created the data table with the preprocessed face images, learning the PCA model is usually smooth. As smooth as passing the data table to an opencv pca instance with your expected maximum components like such `cv::PCA pca(datatable, cv::Mat(), cv::PCA::DATA_AS_ROW, number_of_components)`. With this we have a learned PCA written in C++ which is ready for production use.
@@ -70,6 +72,7 @@ To transfer this model for use in any environment, open cv has a `FileStorage` o
 To conclude this part of the article, I will simply show how to write the mat object using opencv. At the end of the day, the values in the saved model comes out as either a YAML file or XML depending on the choice most pleasant to the user.
 * Save the pca model object for inference on production environment.
 What exactly needs to be saved in the pca object are the mean and eigenvectors of the trained pca, sometimes it may be a good idea to also save the eigen values in case you want to construct your own eigenfaces projection, but opencv already implemented a `pca->project` instance that helps in inference and eigenfaces generation. In any case here is how to save your model:
+
 ```cpp
 void Facepca::savemodel(cv::PCA pcaModel, const std::string filename){
 
@@ -80,6 +83,6 @@ void Facepca::savemodel(cv::PCA pcaModel, const std::string filename){
     fs.release();
 
 }
-
 ```
+
 In the next part of this article, I will explain how to set up an inference library in c++ while using jni as your connector to your inference library.
