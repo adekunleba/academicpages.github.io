@@ -71,7 +71,7 @@ package org.example.code
 
 class MatchFeatures {
 
-    static void matchpcafeatures(modelfilename: String, image: String, projectionToCompare: Array[Float])
+    static float matchpcafeatures(modelfilename: String, image: String, projectionToCompare: Array[Float])
 }
 
 ```
@@ -205,6 +205,14 @@ System.loads("native-lib")
 ```
 Finally I can make a call to my methods created earlier with the parameters necessary and the native code then can execute for me.
 
+```java
+
+MatchFeatures mf = new MatchFeatures();
+
+float matchscores = mf.matchpcafeatures(storedpacfilepath, imagebase64string, anotherimageprojectionarray);
+
+```
+If you notice carefully, the method was declared native and there is no body for the method, this is because the programmes understand that there is a native cpp method that has been defined with this classpath name.
 
 ### Conclusion:
 This approach is a fundamental way to build and deploy project that include native codes to a java environment. Also,most complex algorithmic problems including machine learning anc core computer vision project can easily be reason around in cpp most because it is fast and there are production ready libraries available.
